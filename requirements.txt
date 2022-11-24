@@ -38,7 +38,9 @@ httpcore==0.16.1
 httptools==0.5.0
     # via uvicorn
 httpx==0.23.1
-    # via fastapi
+    # via
+    #   fastapi
+    #   pytest-httpx
 idna==3.4
     # via
     #   anyio
@@ -69,6 +71,10 @@ pydantic==1.10.2
 pyparsing==3.0.9
     # via packaging
 pytest==7.2.0
+    # via
+    #   -r requirements.in
+    #   pytest-httpx
+pytest-httpx==0.21.2
     # via -r requirements.in
 python-dotenv==0.21.0
     # via uvicorn
