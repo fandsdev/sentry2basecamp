@@ -1,6 +1,6 @@
 import pytest
 from fastapi.testclient import TestClient
-from sentry.main import app
+from main import app
 from sentry.tests.request_data import event, issue
 
 

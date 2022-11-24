@@ -1,27 +1,16 @@
-from typing import Any, Mapping
 from fastapi.requests import Request
 from fastapi.responses import Response
-from uuid import UUID
 
-from fastapi import FastAPI
 from fastapi import status
-from pydantic.config import Extra
-from pydantic.main import BaseModel
+from fastapi import APIRouter
 
-app = FastAPI()
-
-
-class Installation(BaseModel):
-    uuid: UUID
+from sentry.types import Webhook
 
 
-class Webhook(BaseModel, extra=Extra.allow):
-    action: str
-    data: Mapping[str, Any]
-    installation: Installation
+api_router = APIRouter()
 
 
-@app.post("/api/sentry/webhook", status_code=status.HTTP_200_OK)
+@api_router.post("/api/sentry/webhook", status_code=status.HTTP_200_OK)
 async def sentry_webhook(webhook: Webhook, request: Request):
     if request.headers.get('sentry-hook-resource') == 'issue':
 
