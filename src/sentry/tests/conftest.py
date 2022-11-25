@@ -1,7 +1,7 @@
 import pytest
 from fastapi.testclient import TestClient
 from main import app
-from sentry.tests.request_data import event, issue
+from sentry.tests.mocked_request_data import event, issue
 
 
 @pytest.fixture

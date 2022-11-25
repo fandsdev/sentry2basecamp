@@ -2,3 +2,4 @@ fastapi[all]
 pytest
 pip-tools
 pytest-httpx
+pytest-mock

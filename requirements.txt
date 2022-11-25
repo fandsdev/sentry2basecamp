@@ -74,7 +74,10 @@ pytest==7.2.0
     # via
     #   -r requirements.in
     #   pytest-httpx
+    #   pytest-mock
 pytest-httpx==0.21.2
+    # via -r requirements.in
+pytest-mock==3.10.0
     # via -r requirements.in
 python-dotenv==0.21.0
     # via uvicorn
