@@ -29,6 +29,8 @@ exceptiongroup==1.0.4
     # via pytest
 fastapi[all]==0.87.0
     # via -r requirements.in
+flake8==6.0.0
+    # via -r requirements.in
 h11==0.14.0
     # via
     #   httpcore
@@ -54,6 +56,12 @@ jinja2==3.1.2
     # via fastapi
 markupsafe==2.1.1
     # via jinja2
+mccabe==0.7.0
+    # via flake8
+mypy==0.991
+    # via -r requirements.in
+mypy-extensions==0.4.3
+    # via mypy
 orjson==3.8.2
     # via fastapi
 packaging==21.3
@@ -66,15 +74,22 @@ pip-tools==6.10.0
     # via -r requirements.in
 pluggy==1.0.0
     # via pytest
+pycodestyle==2.10.0
+    # via flake8
 pydantic==1.10.2
     # via fastapi
+pyflakes==3.0.1
+    # via flake8
 pyparsing==3.0.9
     # via packaging
 pytest==7.2.0
     # via
     #   -r requirements.in
+    #   pytest-env
     #   pytest-httpx
     #   pytest-mock
+pytest-env==0.8.1
+    # via -r requirements.in
 pytest-httpx==0.21.2
     # via -r requirements.in
 pytest-mock==3.10.0
@@ -101,10 +116,13 @@ starlette==0.21.0
 tomli==2.0.1
     # via
     #   build
+    #   mypy
     #   pep517
     #   pytest
 typing-extensions==4.4.0
-    # via pydantic
+    # via
+    #   mypy
+    #   pydantic
 ujson==5.5.0
     # via fastapi
 uvicorn[standard]==0.20.0

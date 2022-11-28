@@ -1,6 +1,6 @@
 import pytest
 
-from basecamp.campfire_bot import CampfireBot
+from src.basecamp.campfire_bot import CampfireBot
 from httpx._exceptions import HTTPStatusError
 
 

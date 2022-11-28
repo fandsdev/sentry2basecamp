@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 
-from config import get_settings
-from sentry.api import api_router
+from src.config import get_settings
+from src.sentry.api import api_router
 
 
 settings = get_settings()

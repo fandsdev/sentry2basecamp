@@ -1,5 +1,9 @@
 fastapi[all]
 pytest
 pip-tools
+
 pytest-httpx
 pytest-mock
+pytest-env
+flake8
+mypy

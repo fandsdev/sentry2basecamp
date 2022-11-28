@@ -1,7 +1,7 @@
 import httpx
 from httpx._models import Response
 
-from config import get_settings
+from src.config import get_settings
 
 settings = get_settings()
 

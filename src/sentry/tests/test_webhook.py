@@ -3,7 +3,7 @@ import pytest
 
 @pytest.fixture
 def mocked_basecamp_send_message(mocker):
-    return mocker.patch('basecamp.campfire_bot.CampfireBot.send_message')
+    return mocker.patch('src.basecamp.campfire_bot.CampfireBot.send_message')
 
 
 def test_response_if_issue(client, issue_resolved_webhook, headers, mocked_basecamp_send_message):

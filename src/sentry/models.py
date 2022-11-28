@@ -1,8 +1,11 @@
-from typing import Any, Mapping
+from typing import Any, Callable, Literal, Mapping
 from uuid import UUID
 
 from pydantic import BaseModel
 from pydantic.config import Extra
+
+
+SentryHookResourceHeader = Literal['issue', 'event-alert']
 
 
 class Installation(BaseModel):
@@ -14,10 +17,10 @@ class Webhook(BaseModel, extra=Extra.allow):
     data: Mapping[str, Any]
     installation: Installation
 
-    def dispatch_webhook_title(self, sentry_hook_resource: str) -> str:
-        hook_title = {
+    def dispatch_webhook_title(self, sentry_hook_resource: SentryHookResourceHeader) -> str:
+        hook_title: dict[str, Callable[..., str]] = {
             'issue': lambda: self.data['issue']['title'],
             'event-alert': lambda: self.data['event']['title'],
         }
 
-        return hook_title.get(sentry_hook_resource)()
+        return hook_title[sentry_hook_resource]()
