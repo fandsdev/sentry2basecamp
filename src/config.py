@@ -7,7 +7,7 @@ from src.helpers import str_to_bool
 
 
 class Settings(BaseSettings):
-    DEBUG: bool = bool(str_to_bool(os.getenv('DEBUG', 'False')))
+    DEBUG: bool = str_to_bool(os.getenv('DEBUG', 'False'))
 
     BASECAMP_ACCOUNT_ID: str = 'bc-acc-id'
     BASECAMP_CHATBOT_KEY: str = 'bc-bot-key'
